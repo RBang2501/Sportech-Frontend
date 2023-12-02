@@ -17,11 +17,6 @@
     - name: Running container
       shell: docker run -d --name Sportech-Frontend rakshitbang099/sportech_frontend:latest
 
-    - name: Wait for container to be ready
-      wait_for:
-        host: localhost
-        port: 3000
-
     - name: Install firebase cli
       shell: docker exec Sportech-Frontend npm install -g firebase-tools
 
