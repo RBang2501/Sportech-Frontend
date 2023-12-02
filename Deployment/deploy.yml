@@ -15,7 +15,7 @@
         state: started
 
     - name: Running container
-      shell: docker run -p 3000:3000 -d --name Sportech-Frontend rakshitbang099/sportech_frontend 
+      shell: docker run -d --name Sportech-Frontend rakshitbang099/sportech_frontend 
 
     - name: Install firebase cli
       shell: docker exec -it Sportech-Frontend npm install firebase-tools
