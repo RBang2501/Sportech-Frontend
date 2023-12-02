@@ -1,5 +1,5 @@
 ---
-- name: Pull Docker Image of Calculator
+- name: Pull Docker Image of Sportech
   hosts: all
   vars:
     ansible_python_interpreter: /usr/bin/python3
@@ -30,7 +30,10 @@
       register: firebase_path
 
     - name: deploy npm app
-      shell: docker exec Sportech-Frontend {{ firebase_path.stdout }} deploy
-    
-    - name: docker stop
+      block:
+        - name: Deploy application
+          shell: docker exec Sportech-Frontend {{ firebase_path.stdout }} deploy
+      ignore_errors: yes
+
+    - name: Stop Docker container
       shell: docker stop Sportech-Frontend
