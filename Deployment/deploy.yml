@@ -22,3 +22,6 @@
 
     - name: deploy npm app
       shell: docker exec Sportech-Frontend firebase deploy
+    
+    - name: docker stop
+      shell: docker stop Sportech-Frontend
