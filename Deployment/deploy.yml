@@ -18,7 +18,7 @@
       shell: docker run -d --name Sportech-Frontend rakshitbang099/sportech_frontend 
 
     - name: Install firebase cli
-      shell: docker exec -it Sportech-Frontend npm install firebase-tools
+      shell: docker exec Sportech-Frontend npm install firebase-tools
 
     - name: deploy npm app
-      shell: docker exec -it Sportech-Frontend firebase deploy
+      shell: docker exec Sportech-Frontend firebase deploy
