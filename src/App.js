@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React Arjan Velly Re Tod ke gadha si mari 
+          Hi Rahul My friend Fuck Off
         </a>
       </header>
     </div>
