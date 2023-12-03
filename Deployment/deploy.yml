@@ -28,7 +28,11 @@
       shell: docker exec Sportech-Frontend which firebase
       register: firebase_path
 
-    - name: deploy npm app
+    - name: Firebase Login
+      when: run_container_result is succeeded
+      shell: docker exec Sportech-Frontend firebase login
+
+    - name: Firebase Deploy
       when: run_container_result is succeeded
       block:
         - name: Deploy application
