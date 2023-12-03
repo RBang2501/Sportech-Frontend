@@ -15,7 +15,7 @@
         state: started
 
     - name: Running container
-      shell: docker run -d --name Sportech-Frontend rakshitbang099/sportech_frontend:latest
+      shell: docker run -d --name Sportech-Frontend -e GOOGLE_APPLICATION_CREDENTIALS=/app/serviceAccountKey.json rakshitbang099/sportech_frontend:latest
       register: run_container_result
       ignore_errors: true
 
@@ -32,7 +32,7 @@
       when: run_container_result is succeeded
       block:
         - name: Deploy application
-          shell: docker exec Sportech-Frontend {{ firebase_path.stdout }} deploy --token 4/0AfJohXnVTdJPw30DYaNRBcBqMSxgdrmTLE1v6ynBU8UD0w3Yy24l4SnT9fZpMJwd4I_rxQ
+          shell: docker exec Sportech-Frontend {{ firebase_path.stdout }} deploy 
 
     - name: Stop Docker container
       shell: docker stop Sportech-Frontend

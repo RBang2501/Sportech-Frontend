@@ -2,13 +2,13 @@ FROM node:18.13.0-alpine
 
 WORKDIR /app
 
-COPY ./sportech-frontend-firebase-adminsdk-smh65-e6f5d4c18c.json /app/serviceAccountKey.json
+COPY ./sportech-frontend-firebase-adminsdk-smh65-e6f5d4c18c.json ./serviceAccountKey.json
 
-COPY ./package*.json /app
+COPY ./package*.json ./
 
 RUN npm install
 
-COPY . /app
+COPY . .
 
 EXPOSE 3000
 
