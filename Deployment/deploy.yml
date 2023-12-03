@@ -28,15 +28,11 @@
       shell: docker exec Sportech-Frontend which firebase
       register: firebase_path
 
-    - name: Firebase Login
-      when: run_container_result is succeeded
-      shell: docker exec Sportech-Frontend firebase login
-
     - name: Firebase Deploy
       when: run_container_result is succeeded
       block:
         - name: Deploy application
-          shell: docker exec Sportech-Frontend {{ firebase_path.stdout }} deploy
+          shell: docker exec Sportech-Frontend {{ firebase_path.stdout }} deploy --token 4/0AfJohXnVTdJPw30DYaNRBcBqMSxgdrmTLE1v6ynBU8UD0w3Yy24l4SnT9fZpMJwd4I_rxQ
 
     - name: Stop Docker container
       shell: docker stop Sportech-Frontend
