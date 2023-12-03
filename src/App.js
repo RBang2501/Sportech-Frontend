@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React Arjan Velly
+          Learn React Arjan Velly Re Tod ke gadha si mari 
         </a>
       </header>
     </div>
